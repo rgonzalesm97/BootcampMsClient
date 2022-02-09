@@ -1,4 +1,4 @@
-package com.bank.client.model.dto;
+package com.bank.client.model.dao;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,9 +11,8 @@ public class Client {
 
 	@Id
 	private String id;
-	private String nombre;
-	private String apellidos;
-	private String razonSocial;
-	private String tipo;
-	private Object productos;
+	private String name;
+	private String lastname;
+	private String type;
+	private Object products;
 }

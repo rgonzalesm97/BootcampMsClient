@@ -2,7 +2,7 @@ package com.bank.client.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.bank.client.model.dto.Client;
+import com.bank.client.model.dao.Client;
 import com.bank.client.repository.ClientRepository;
 import com.bank.client.service.ClientService;
 
