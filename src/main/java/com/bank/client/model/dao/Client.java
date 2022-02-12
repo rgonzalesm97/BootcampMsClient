@@ -6,13 +6,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 @Data
-@Document("clientes")
+@Document("client")
 public class Client {
 
 	@Id
 	private String id;
 	private String name;
-	private String lastname;
 	private String type;
-	private Object products;
 }
