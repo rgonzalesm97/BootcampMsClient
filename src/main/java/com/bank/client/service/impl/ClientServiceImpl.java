@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.bank.client.model.dao.Client;
 import com.bank.client.repository.ClientRepository;
 import com.bank.client.service.ClientService;
+import com.bank.client.util.ClientFactory;
 
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Flux;
@@ -28,7 +29,9 @@ public class ClientServiceImpl implements ClientService{
 	
 	@Override
 	public Mono<Client> save(Client client) {
-		return clientRepo.save(client);
+		Client validClient = ClientFactory.validateClient(client)
+											.orElseThrow(() -> new IllegalArgumentException("Invalid Client type"));
+		return clientRepo.save(validClient);
 	}
 
 	@Override
